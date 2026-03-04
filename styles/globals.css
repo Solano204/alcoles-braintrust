@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1a2744;
+  --navy-light: #223060;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-gray-100 text-gray-800;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #999; }
+
+/* Form inputs */
+.form-input {
+  @apply w-full border border-gray-300 rounded px-2 py-1.5 text-sm
+         focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent
+         bg-white placeholder-gray-400;
+}
+.form-select {
+  @apply w-full border border-gray-300 rounded px-2 py-1.5 text-sm
+         focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white cursor-pointer;
+}
+.form-label {
+  @apply block text-xs font-semibold text-gray-600 mb-0.5;
+}
+
+/* Buttons */
+.btn-green  { @apply bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-sm transition; }
+.btn-yellow { @apply bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded text-sm transition; }
+.btn-red    { @apply bg-red-600   hover:bg-red-700   text-white font-bold py-2 px-4 rounded text-sm transition; }
+.btn-gray   { @apply bg-gray-500  hover:bg-gray-600  text-white font-bold py-2 px-4 rounded text-sm transition; }
+.btn-dark   { @apply bg-gray-800  hover:bg-gray-900  text-white font-bold py-2 px-4 rounded text-sm transition; }
+
+/* Table */
+.data-table th {
+  @apply bg-gray-800 text-white text-xs font-semibold px-3 py-2 text-center;
+}
+.data-table td {
+  @apply text-xs px-3 py-1.5 text-center border-b border-gray-200;
+}
+.data-table tr:hover td { @apply bg-blue-50 cursor-pointer; }
+.data-table tr.selected td { @apply bg-blue-100; }
+
+/* Section headers */
+.section-title {
+  @apply text-blue-700 font-bold text-base mb-3 border-b border-blue-200 pb-1;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+.modal-box {
+  @apply bg-white rounded-xl shadow-2xl p-6 max-w-md w-full mx-4;
+}
